@@ -8,9 +8,9 @@
   <h1>Hello from {{title}}!</h1>
 
   <div>
-    Count: {{ count$ | async }}
-    <button (click)="increment()">+</button>
-    <button (click)="decrement()">-</button>
+    Count: {{ count$ | async }}<br/>
+    <button md-raised-button (click)="increment()">+</button><br/>
+    <button md-raised-button (click)="decrement()">-</button><br/>
   </div>
   <!-- Images (and assets) are parsed and loaded from within the public directory -->
   <img src="/img/angular.png">

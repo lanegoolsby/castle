@@ -16,13 +16,17 @@ import { roomReducer, INITIAL_STATE } from './things/things.reducer';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
+import { MaterialModule } from '@angular/material';
+import 'hammerjs';
+
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
     routing,
-    NgReduxModule
+    NgReduxModule,
+    MaterialModule.forRoot()
   ],
   declarations: [
     AppComponent,
