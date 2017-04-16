@@ -36,7 +36,9 @@ import 'hammerjs';
   providers: [
     ThingActions
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {
   constructor(public appRef: ApplicationRef,

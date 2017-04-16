@@ -1,4 +1,19 @@
-<header>
+  <md-toolbar color="primary">
+      {{title}}
+  </md-toolbar>
+
+  <div class="app-content">
+    <md-card>
+      <h3 md-line>Count: {{ count$ | async }}</h3>
+      <button md-raised-button (click)="increment()">+</button>
+      <button md-raised-button (click)="decrement()">-</button>
+    </md-card>
+    <md-card>
+        <router-outlet></router-outlet>
+    </md-card>
+  </div>
+
+<!--header>
   <nav>
     <a [routerLink]="['']">Home</a>
     <a [routerLink]="['about']">About</a>
@@ -13,10 +28,10 @@
     <button md-raised-button (click)="decrement()">-</button><br/>
   </div>
   <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/angular.png">
-
+  <!--img src="/img/angular.png"-->
+<!--
   <router-outlet></router-outlet>
 </main>
 <footer>
   <a [href]="url">Webpack Angular 2 Starter</a>
-</footer>
+</footer-->
