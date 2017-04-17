@@ -10,6 +10,4 @@ import '../style/app.scss';
 })
 export class AppComponent {
   title = 'Castle .01';
-
-
 }
