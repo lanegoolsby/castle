@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { LeftNavComponent } from './components/leftnav/leftnav.component';
 import { RoomComponent } from './components/room_comp/room.component';
 

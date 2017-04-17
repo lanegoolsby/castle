@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { LeftNavComponent } from './components/leftnav/leftnav.component';
 import { RoomComponent } from './components/room_comp/room.component';
 import { routing } from './app.routing';

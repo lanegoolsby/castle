@@ -1,16 +1,23 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { StoreCreator } from 'redux';
 
 import { ThingActions } from './things/things.actions';
 
+import { MaterialModule } from '@angular/material';
+
+import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { LeftNavComponent } from './components/leftnav/leftnav.component';
+import { RoomComponent } from './components/room_comp/room.component';
+
 const mockNgRedux: any = {
-  configureStore: () => {},
-  dispatch: () => {},
-  select: () => {},
+  configureStore: () => { },
+  dispatch: () => { },
+  select: () => { },
 };
 NgRedux.instance = mockNgRedux;
 
@@ -20,19 +27,28 @@ const mockDevToolsExtension = {
 };
 
 const mockThingActions = {
-  increment: () => {},
-  decrement: () => {},
+  increment: () => { },
+  decrement: () => { },
 };
 
 describe('App', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent],
-            providers: [
+      imports: [
+        RouterTestingModule,
+        MaterialModule.forRoot()
+      ],
+      declarations: [
+        AppComponent,
+        HomeComponent,
+        LeftNavComponent,
+        RoomComponent
+      ],
+      providers: [
         { provide: NgRedux, useValue: mockNgRedux },
         { provide: DevToolsExtension, useValue: mockDevToolsExtension },
         { provide: ThingActions, useValue: mockThingActions },
+        { provide: APP_BASE_HREF, useValue: '/' }
       ],
     }).compileComponents();
   }));
