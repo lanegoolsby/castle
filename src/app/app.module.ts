@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LeftNavComponent } from './components/leftnav/leftnav.component';
 import { RoomComponent } from './components/room_comp/room.component';
+import { SettingsComponent } from './components/settings_comp/settings.component';
+
 import { routing } from './app.routing';
 
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
@@ -33,7 +35,8 @@ import 'hammerjs';
     AppComponent,
     HomeComponent,
     LeftNavComponent,
-    RoomComponent
+    RoomComponent,
+    SettingsComponent
   ],
   providers: [
     ThingActions

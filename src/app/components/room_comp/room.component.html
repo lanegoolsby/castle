@@ -3,3 +3,7 @@
     <button md-raised-button (click)="increment()">+</button>
     <button md-raised-button (click)="decrement()">-</button>
 </md-card>
+<md-card>
+    <h2 md-line>Nested card</h2>
+    Count: {{count$ | async}}
+</md-card>
