@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { LeftNavComponent } from './components/leftnav/leftnav.component';
 import { RoomComponent } from './components/room_comp/room.component';
 import { SettingsComponent } from './components/settings_comp/settings.component';
 
@@ -34,7 +33,6 @@ import 'hammerjs';
   declarations: [
     AppComponent,
     HomeComponent,
-    LeftNavComponent,
     RoomComponent,
     SettingsComponent
   ],

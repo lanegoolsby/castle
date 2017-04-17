@@ -11,7 +11,6 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { LeftNavComponent } from './components/leftnav/leftnav.component';
 import { RoomComponent } from './components/room_comp/room.component';
 
 const mockNgRedux: any = {
@@ -41,7 +40,6 @@ describe('App', () => {
       declarations: [
         AppComponent,
         HomeComponent,
-        LeftNavComponent,
         RoomComponent
       ],
       providers: [

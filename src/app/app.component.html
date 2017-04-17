@@ -8,7 +8,11 @@
 
 <md-sidenav-container>
   <md-sidenav #sidenav mode="side" class="app-sidenav">
-    <cstl-leftnav></cstl-leftnav>
+    <ul>
+      <li><a [routerLink]="['']" (click)="toggleNav(sidenav)">Home</a></li>
+      <li><a [routerLink]="['room']" (click)="toggleNav(sidenav)">Rooms</a></li>
+      <li><a [routerLink]="['settings']" (click)="toggleNav(sidenav)">Settings</a></li>
+    </ul>
   </md-sidenav>
 
   <div class="app-content">

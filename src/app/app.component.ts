@@ -10,4 +10,8 @@ import '../style/app.scss';
 })
 export class AppComponent {
   title = 'Castle .01';
+
+  toggleNav(nav: any) {
+    nav.toggle();
+  }
 }
