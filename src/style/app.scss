@@ -13,3 +13,8 @@ $theme: mat-light-theme($primary, $accent, $warn);
 body{
     margin:0;
 }
+
+.plainanchor:link, .plainanchor:visited{
+    color:#000;
+    text-decoration: none;  
+}

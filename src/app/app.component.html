@@ -1,19 +1,19 @@
+<md-toolbar color="primary">
+  <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+  </button>
+
+  <a class="plainanchor" [routerLink]="['']">{{title}}</a>
+</md-toolbar>
+
 <md-sidenav-container>
   <md-sidenav #sidenav mode="side" class="app-sidenav">
     <cstl-leftnav></cstl-leftnav>
   </md-sidenav>
 
-<md-toolbar color="primary">
-  <button class="app-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
-  </button>
-    
-  <a [routerLink]="['']">{{title}}</a>
-</md-toolbar>
-
-<div class="app-content">
-  <md-card>
-    <router-outlet></router-outlet>
-  </md-card>
-</div>
+  <div class="app-content">
+    <md-card>
+      <router-outlet></router-outlet>
+    </md-card>
+  </div>
 </md-sidenav-container>
