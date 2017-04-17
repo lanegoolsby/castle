@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'my-leftnav',
+  selector: 'cstl-leftnav',
   templateUrl: './leftnav.component.html',
   styleUrls: ['./leftnav.component.scss']
 })

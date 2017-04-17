@@ -5,7 +5,7 @@ import { ThingActions } from '../../things/things.actions';
 import { IAppState } from '../../store/root.types';
 
 @Component({
-  selector: 'my-room',
+  selector: 'cstl-room',
   templateUrl: './room.component.html',
   styleUrls: ['./room.component.scss']
 })
