@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NgRedux } from '@angular-redux/store';
-import { ThingActions } from '../../things/things.actions';
-import { IAppState } from '../../store/root.types';
+import { ThingActions } from '../../actions/thing.actions';
+import { IAppState } from '../../reducers/root.reducer';
 
 @Component({
   selector: 'cstl-room',
@@ -24,9 +24,9 @@ export class RoomComponent implements OnInit {
   }
 
   increment() {
-    this.ngRedux.dispatch(this.actions.increment());
+    this.ngRedux.dispatch(this.actions.add(null));
   }
   decrement() {
-    this.ngRedux.dispatch(this.actions.decrement());
+    this.ngRedux.dispatch(this.actions.add(null));
   }
 }

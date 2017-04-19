@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { Action } from 'redux';
 
 @Injectable()
@@ -24,4 +24,4 @@ export class ThingActions {
             type: ThingActions.DECREMENT
         };
     }
-}
+}*/

@@ -12,9 +12,8 @@ import { routing } from './app.routing';
 
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 
-import { ThingActions } from './things/things.actions';
-import { IAppState } from './store/root.types';
-import { roomReducer, INITIAL_STATE } from './things/things.reducer';
+import { ThingActions } from './actions/thing.actions';
+import { rootReducer, INITIAL_STATE, IAppState } from './reducers/root.reducer';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
@@ -49,7 +48,7 @@ export class AppModule {
     devTools: DevToolsExtension) {
     const storeEnhancers = devTools.isEnabled() ? [devTools.enhancer()] : [];
     ngRedux.configureStore(
-      roomReducer,
+      rootReducer,
       INITIAL_STATE,
       [],
       storeEnhancers);

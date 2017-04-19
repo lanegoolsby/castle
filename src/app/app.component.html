@@ -1,21 +1,20 @@
-<md-toolbar color="primary">
-  <button class="app-icon-button" (click)="sidenav.toggle()">
+<md-sidenav-container fullscreen> 
+  <md-toolbar class="fixed" color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
       <i class="material-icons app-toolbar-menu">menu</i>
-  </button>
+    </button>
+    <a class="plainanchor" [routerLink]="['']">{{title}}</a>
+  </md-toolbar>
 
-  <a class="plainanchor" [routerLink]="['']">{{title}}</a>
-</md-toolbar>
-
-<md-sidenav-container>
-  <md-sidenav #sidenav mode="side" class="app-sidenav">
-    <ul>
-      <li><a [routerLink]="['']" (click)="toggleNav(sidenav)">Home</a></li>
-      <li><a [routerLink]="['room']" (click)="toggleNav(sidenav)">Rooms</a></li>
-      <li><a [routerLink]="['settings']" (click)="toggleNav(sidenav)">Settings</a></li>
-    </ul>
+  <md-sidenav #sidenav mode="over" class="app-sidenav">
+    <md-nav-list>
+      <md-list-item><a [routerLink]="['']" (click)="toggleNav(sidenav)">Home</a></md-list-item>
+      <md-list-item><a [routerLink]="['room']" (click)="toggleNav(sidenav)">Rooms</a></md-list-item>
+      <md-list-item><a [routerLink]="['settings']" (click)="toggleNav(sidenav)">Settings</a></md-list-item>
+    </md-nav-list>
   </md-sidenav>
 
-  <div class="app-content">
+  <div>
     <router-outlet></router-outlet>
   </div>
 </md-sidenav-container>

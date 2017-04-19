@@ -5,7 +5,7 @@ import { APP_BASE_HREF } from '@angular/common';
 import { NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { StoreCreator } from 'redux';
 
-import { ThingActions } from './things/things.actions';
+import { ThingActions } from './actions/thing.actions';
 
 import { MaterialModule } from '@angular/material';
 
