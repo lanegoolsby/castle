@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NgRedux } from '@angular-redux/store';
-import { ThingActions } from '../../actions/thing.actions';
+import { RoomActions, ThingActions } from '../../actions/actions';
 import { IAppState } from '../../reducers/root.reducer';
+import { IRoom } from '../../reducers/room';
+import { IThing, THING_TYPES } from '../../reducers/thing';
 
 @Component({
   selector: 'cstl-room',
@@ -10,12 +12,15 @@ import { IAppState } from '../../reducers/root.reducer';
   styleUrls: ['./room.component.scss']
 })
 export class RoomComponent implements OnInit {
-  readonly count$: Observable<number>;
+  readonly count$: Observable<IThing>;
+  readonly things$: Observable<IRoom[]>;
 
   constructor(
     private ngRedux: NgRedux<IAppState>,
-    private actions: ThingActions) {
-    this.count$ = ngRedux.select<number>('count');
+    private thingActions: ThingActions,
+    private roomActions: RoomActions) {
+    this.count$ = ngRedux.select<IThing>('things');
+    this.things$ = ngRedux.select<IRoom[]>('rooms');
   }
 
 
@@ -24,9 +29,17 @@ export class RoomComponent implements OnInit {
   }
 
   increment() {
-    this.ngRedux.dispatch(this.actions.add(null));
+    let thing: IThing = {
+      type: THING_TYPES.LIGHT,
+      name: 'asdf',
+      loading: false
+    };
+
+    this.ngRedux.dispatch(this.thingActions.add(thing));
+    this.ngRedux.dispatch(this.roomActions.addThing(thing));
   }
   decrement() {
-    this.ngRedux.dispatch(this.actions.add(null));
+    this.ngRedux.dispatch(this.thingActions.remove(null));
+    this.ngRedux.dispatch(this.roomActions.delete(null));
   }
 }
