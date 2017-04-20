@@ -12,15 +12,15 @@ import { IThing, THING_TYPES } from '../../reducers/thing';
   styleUrls: ['./room.component.scss']
 })
 export class RoomComponent implements OnInit {
-  readonly count$: Observable<IThing>;
-  readonly things$: Observable<IRoom[]>;
+  readonly things$: Observable<IThing>;
+  readonly rooms$: Observable<IRoom[]>;
 
   constructor(
     private ngRedux: NgRedux<IAppState>,
     private thingActions: ThingActions,
     private roomActions: RoomActions) {
-    this.count$ = ngRedux.select<IThing>('things');
-    this.things$ = ngRedux.select<IRoom[]>('rooms');
+    this.things$ = ngRedux.select<IThing>('things');
+    this.rooms$ = ngRedux.select<IRoom[]>('rooms');
   }
 
 

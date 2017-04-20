@@ -1,11 +1,16 @@
 <md-card>
-    <h3 md-line>Count: {{ count$ | async }}</h3>
     <button md-raised-button (click)="increment()">+</button>
     <button md-raised-button (click)="decrement()">-</button>
 </md-card>
 <md-card>
     <h2 md-line>Nested card</h2>
-    Count: {{count$ | async}} 
-    <br>
-    Things: {{things$ | async }}
+    Thing Count: {{(things$ | async)?.length}}
+</md-card>
+<md-card>
+    <select name="things" [(ngModel)]="things$">
+        <option [ngValue]="-1">--Select Thing--</option>
+        <ng-template ngFor let-thing [ngForOf]="things$ | async">
+          <option [ngValue]="thing.name">{{thing.name}}</option>
+        </ng-template>
+      </select>
 </md-card>
