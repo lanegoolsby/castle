@@ -1,9 +1,9 @@
 import { Action } from 'redux';
-import { IThing } from '../reducers/thing';
+import { Thing } from '../reducers/thing';
 import { RoomConstants } from '../lib/constants';
 
-export class IRoom {
-  things: IThing[];
+export class Room {
+  things: Thing[];
   name: string;
   loading: boolean;
 }

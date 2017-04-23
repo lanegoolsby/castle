@@ -3,8 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import { NgRedux } from '@angular-redux/store';
 import { RoomActions, ThingActions } from '../../actions/actions';
 import { IAppState } from '../../reducers/root.reducer';
-import { IRoom } from '../../reducers/room';
-import { IThing, THING_TYPES } from '../../reducers/thing';
+import { Room } from '../../reducers/room';
+import { Thing, THING_TYPES } from '../../reducers/thing';
 
 @Component({
   selector: 'cstl-room',
@@ -12,15 +12,15 @@ import { IThing, THING_TYPES } from '../../reducers/thing';
   styleUrls: ['./room.comp.scss']
 })
 export class RoomComponent implements OnInit {
-  readonly things$: Observable<IThing>;
-  readonly rooms$: Observable<IRoom[]>;
+  readonly things$: Observable<Thing>;
+  readonly rooms$: Observable<Room[]>;
 
   constructor(
     private ngRedux: NgRedux<IAppState>,
     private thingActions: ThingActions,
     private roomActions: RoomActions) {
-    this.things$ = ngRedux.select<IThing>('things');
-    this.rooms$ = ngRedux.select<IRoom[]>('rooms');
+    this.things$ = ngRedux.select<Thing>('things');
+    this.rooms$ = ngRedux.select<Room[]>('rooms');
   }
 
 
@@ -29,7 +29,7 @@ export class RoomComponent implements OnInit {
   }
 
   increment() {
-    let thing: IThing = {
+    let thing: Thing = {
       type: THING_TYPES.LIGHT,
       name: 'asdf',
       loading: false

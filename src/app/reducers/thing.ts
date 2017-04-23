@@ -9,7 +9,7 @@ export enum THING_TYPES {
     HALL
 }
 
-export class IThing {
+export class Thing {
     type: THING_TYPES;
     name: string;
     loading: boolean;

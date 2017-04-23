@@ -1,9 +1,9 @@
 import { Action } from 'redux';
 import { HouseConstants } from '../lib/constants';
-import { IRoom } from './room';
+import { Room } from './room';
 
-export class IHouse {
-    rooms: IRoom[];
+export class House {
+    rooms: Room[];
     loading: boolean;
 }
 

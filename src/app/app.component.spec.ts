@@ -56,6 +56,6 @@ describe('App', () => {
   it('should have an url', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Castle .01');
+    expect(app.title).toEqual('Castle');
   }));
 });
