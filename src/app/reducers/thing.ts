@@ -16,10 +16,14 @@ export class Thing {
 }
 
 let InitalState: Thing[] = [{
-    type:THING_TYPES.LIGHT,
-    name:'Wall Light',
-    loading:false
-}]
+    type: THING_TYPES.LIGHT,
+    name: 'Wall Light',
+    loading: false
+}, {
+    type: THING_TYPES.LIGHT,
+    name: 'Wall Light',
+    loading: false
+}];
 
 export function ThingReducer(state = InitalState, action) {
     switch (action.type) {
@@ -27,8 +31,8 @@ export function ThingReducer(state = InitalState, action) {
             // state.push(action.payload);
             console.log('Added thing');
             return [...state, action.payload];
-            // case ThingActions.DECREMENT: return { count: lastState.count - 1 };
-            // break;
+        // case ThingActions.DECREMENT: return { count: lastState.count - 1 };
+        // break;
         case ThingConstants.DELETE:
             console.log('Removing thing');
             break;
