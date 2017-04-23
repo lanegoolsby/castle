@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NgRedux } from '@angular-redux/store';
-import { RoomActions, ThingActions } from '../../actions/actions';
+// import { RoomActions, ThingActions } from '../../actions/actions';
 import { IAppState } from '../../reducers/root.reducer';
 import { Keep } from '../../reducers/keep';
-import { Room } from '../../reducers/room';
-import { Thing, THING_TYPES } from '../../reducers/thing';
+// import { Room } from '../../reducers/room';
+// import { Thing, THING_TYPES } from '../../reducers/thing';
 
 @Component({
   selector: 'cstl-devices',
@@ -13,16 +13,16 @@ import { Thing, THING_TYPES } from '../../reducers/thing';
   styleUrls: ['./devices.comp.scss']
 })
 export class DevicesComponent implements OnInit {
-  readonly things$: Observable<Thing>;
-  readonly rooms$: Observable<Room[]>;
+  // readonly things$: Observable<Thing>;
+  // readonly rooms$: Observable<Room[]>;
   readonly keeps$: Observable<Keep[]>;
 
   constructor(
-    private ngRedux: NgRedux<IAppState>,
-    private thingActions: ThingActions,
-    private roomActions: RoomActions) {
-    this.things$ = ngRedux.select<Thing>('things');
-    this.rooms$ = ngRedux.select<Room[]>('rooms');
+    private ngRedux: NgRedux<IAppState>) {
+    // private thingActions: ThingActions,
+    // private roomActions: RoomActions) {
+    // this.things$ = ngRedux.select<Thing>('things');
+    // this.rooms$ = ngRedux.select<Room[]>('rooms');
     this.keeps$ = ngRedux.select<Keep[]>('keeps');
   }
 
@@ -31,7 +31,11 @@ export class DevicesComponent implements OnInit {
     console.log('Hello devices');
   }
 
-  increment() {
+  add() {
+    // this is a dummy function for now to keep eslint silent
+    this.ngRedux.dispatch(null);
+  }
+  /* increment() {
     let thing: Thing = {
       id: Math.random(),
       roomId: 1,
@@ -46,5 +50,5 @@ export class DevicesComponent implements OnInit {
   decrement() {
     this.ngRedux.dispatch(this.thingActions.remove(null));
     this.ngRedux.dispatch(this.roomActions.delete(null));
-  }
+  }*/
 }

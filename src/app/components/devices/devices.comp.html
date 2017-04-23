@@ -1,9 +1,9 @@
-<md-tab-group>
+<md-tab-group md-dynamic-height="false">
     <md-tab *ngFor="let currKeep of keeps$ | async" label={{currKeep.name}}>
         <cstl-keep [selectedKeep]="currKeep"></cstl-keep>
     </md-tab>
 </md-tab-group>
-<md-card>
+<!--md-card>
     <button md-raised-button (click)="increment()">+</button>
     <button md-raised-button (click)="decrement()">-</button>
 </md-card>
@@ -18,4 +18,4 @@
           <option [ngValue]="thing.name">{{thing.name}}</option>
         </ng-template>
       </select>
-</md-card>
+</md-card-->
