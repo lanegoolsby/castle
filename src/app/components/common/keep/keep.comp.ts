@@ -3,7 +3,7 @@ import { Keep } from '../../../reducers/keep';
 
 @Component({
     selector: 'cstl-keep',
-    templateUrl: 'keep_comp.html'
+    templateUrl: 'keep.comp.html'
 })
 
 export class KeepComponent {
@@ -11,7 +11,7 @@ export class KeepComponent {
     @Input()
     selectedKeep: Keep;
 
-    constructor(){
-        
+    constructor() {
+
     }
 }

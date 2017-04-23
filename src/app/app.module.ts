@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DevicesComponent } from './components/devices/devices.comp';
 import { SettingsComponent } from './components/settings_comp/settings.component';
-import { KeepComponent } from './components/common/keep/keep_comp';
+import { KeepComponent } from './components/common/keep/keep.comp';
 
 import { routing } from './app.routing';
 

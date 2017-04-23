@@ -13,7 +13,7 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DevicesComponent } from './components/devices/devices.comp';
-import { KeepComponent } from './components/common/keep/keep_comp';
+import { KeepComponent } from './components/common/keep/keep.comp';
 
 const mockNgRedux: any = {
   configureStore: () => { },
