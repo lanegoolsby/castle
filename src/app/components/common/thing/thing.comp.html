@@ -3,9 +3,9 @@
     <button md-menu-item>Edit</button>
     <button md-menu-item (click)="delete()">Delete</button>
 </md-menu>
-
 <button md-icon-button [mdMenuTriggerFor]="thingMenu">
     <md-icon>more_vert</md-icon>
 </button>
+
 <span>{{thing.name}} ({{THING_TYPES[thing.type]}})</span>
 </p>

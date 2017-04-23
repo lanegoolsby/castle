@@ -1,6 +1,14 @@
 <md-card>
     <md-card-title>
-        <md-card-title>{{room.name}}</md-card-title>
+        <md-card-title>
+            <md-menu #roomMenu="mdMenu">
+                <button md-menu-item>Edit</button>
+                <button md-menu-item (click)="delete()">Delete</button>
+                <button md-menu-item (click)="addThing()">Add Thing</button>
+            </md-menu>
+            <button md-icon-button [mdMenuTriggerFor]="roomMenu"><md-icon>more_vert</md-icon></button> 
+            <span>{{room.name}}</span>
+        </md-card-title>
     </md-card-title>
     <md-card-content *ngIf="(things$ | async)?.length === 0">
         <p style="padding-left: 20px">No Things found!</p>
