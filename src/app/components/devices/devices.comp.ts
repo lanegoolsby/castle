@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { NgRedux } from '@angular-redux/store';
 import { RoomActions, ThingActions } from '../../actions/actions';
 import { IAppState } from '../../reducers/root.reducer';
+import { Keep } from '../../reducers/keep';
 import { Room } from '../../reducers/room';
 import { Thing, THING_TYPES } from '../../reducers/thing';
 
@@ -14,6 +15,7 @@ import { Thing, THING_TYPES } from '../../reducers/thing';
 export class DevicesComponent implements OnInit {
   readonly things$: Observable<Thing>;
   readonly rooms$: Observable<Room[]>;
+  readonly keeps$: Observable<Keep[]>;
 
   constructor(
     private ngRedux: NgRedux<IAppState>,
@@ -21,6 +23,7 @@ export class DevicesComponent implements OnInit {
     private roomActions: RoomActions) {
     this.things$ = ngRedux.select<Thing>('things');
     this.rooms$ = ngRedux.select<Room[]>('rooms');
+    this.keeps$ = ngRedux.select<Keep[]>('keeps');
   }
 
 
@@ -31,7 +34,7 @@ export class DevicesComponent implements OnInit {
   increment() {
     let thing: Thing = {
       type: THING_TYPES.LIGHT,
-      name: 'asdf',
+      name: 'Dummy',
       loading: false
     };
 

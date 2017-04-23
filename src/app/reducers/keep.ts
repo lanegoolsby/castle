@@ -1,4 +1,3 @@
-import { Action } from 'redux';
 import { KeepConstants } from '../lib/constants';
 
 export class Keep {
@@ -15,16 +14,23 @@ let InitalState: Keep[] = [{
     name: 'Mailbox',
     id: 2,
     loading: false
+}, {
+    name: 'Mother-in-law-suite',
+    id: 3,
+    loading: false
 }];
 
-export function KeepReducer(state = [InitalState], action: Action) {
+export function KeepReducer(state = InitalState, action) {
     switch (action.type) {
-        case KeepConstants.ADD_ROOM:
+        case KeepConstants.SELECT:
+            console.log('Selected Room');
+            return state.filter(k => k.id === action.payload.id);
+        /*case KeepConstants.ADD_ROOM:
             console.log('Adding room');
             break;
         case KeepConstants.REMOVE_ROOM:
             console.log('Removing room');
-            break;
+            break;*/
     }
 
     return state;

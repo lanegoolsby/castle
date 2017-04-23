@@ -1,10 +1,12 @@
 export const KeepConstants = {
-    EDIT: 'EDIT',
+    SELECT: 'SELECT_KEEP',
+    /*EDIT: 'EDIT',
     ADD_ROOM: 'ADD_ROOM',
-    REMOVE_ROOM: 'REMOVE_ROOM'
+    REMOVE_ROOM: 'REMOVE_ROOM'*/
 };
 
 export const RoomConstants = {
+    GET_KEEP_ROOMS: 'GET_KEEP_ROOMS',
     CREATE: 'CREATE_ROOM',
     EDIT: 'EDIT_ROOM',
     DELETE: 'DELETE_ROOM',

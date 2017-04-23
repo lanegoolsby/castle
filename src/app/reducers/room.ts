@@ -1,15 +1,23 @@
-import { Action } from 'redux';
-import { Thing } from '../reducers/thing';
 import { RoomConstants } from '../lib/constants';
 
 export class Room {
-  things: Thing[];
+  id: number;
+  keepId: number;
   name: string;
   loading: boolean;
 }
 
-export function RoomReducer(state = [], action: Action) {
+let InitialState = [{
+  id: 1,
+  keepId: 1,
+  name: 'Living Room',
+  loading: false
+}];
+
+export function RoomReducer(state = InitialState, action) {
   switch (action.type) {
+    case RoomConstants.GET_KEEP_ROOMS:
+      return state.filter(r => r.keepId === action.payload.id);
     case RoomConstants.CREATE:
       console.log('Adding room');
       break;

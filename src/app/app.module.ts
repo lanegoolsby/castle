@@ -2,11 +2,13 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DevicesComponent } from './components/devices/devices.comp';
 import { SettingsComponent } from './components/settings_comp/settings.component';
+import { KeepComponent } from './components/common/keep/keep_comp';
 
 import { routing } from './app.routing';
 
@@ -28,13 +30,15 @@ import 'hammerjs';
     FormsModule,
     routing,
     NgReduxModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
     HomeComponent,
     DevicesComponent,
-    SettingsComponent
+    SettingsComponent,
+    KeepComponent
   ],
   providers: [
     KeepActions,
