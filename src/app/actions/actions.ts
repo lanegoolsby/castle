@@ -6,13 +6,7 @@ import { KeepConstants, RoomConstants, ThingConstants } from '../lib/constants';
 
 @Injectable()
 export class KeepActions {
-    selectKeep(keep: Keep) {
-        return {
-            type: KeepConstants.SELECT,
-            payload: keep
-        };
-    }
-    /* edit(keep: Keep) {
+    edit(keep: Keep) {
         return {
             type: KeepConstants.EDIT,
             payload: keep
@@ -26,7 +20,7 @@ export class KeepActions {
         };
     }
 
-    removeRoom(room: Room) {
+    /*removeRoom(room: Room) {
         return {
             type: KeepConstants.REMOVE_ROOM,
             payload: room

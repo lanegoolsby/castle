@@ -1,7 +1,5 @@
-<md-card>
-            <!--button md-icon-button (click)="increment()"><i class="material-icons">add</i></button--><h3>Rooms</h3>
-    <md-list>
-        <md-list-item>
-        </md-list-item>
-    </md-list>
-</md-card>
+<!--button md-icon-button (click)="increment()"><i class="material-icons">add</i></button-->
+<h3>Room Count: {{(rooms$ | async)?.length}}</h3>
+<div *ngFor="let currRoom of rooms$ | async">
+    <cstl-room [room]="currRoom"></cstl-room>
+</div>

@@ -1,0 +1,11 @@
+<md-card>
+    <md-card-title>
+        <md-card-title>{{room.name}}</md-card-title>
+    </md-card-title>
+    <md-card-content *ngIf="(things$ | async)?.length === 0">
+        <p style="padding-left: 20px">No Things found!</p>
+    </md-card-content>
+    <md-card-content *ngFor="let currThing of things$ | async">
+        <cstl-thing [thing]="currThing"></cstl-thing>
+    </md-card-content>
+</md-card>

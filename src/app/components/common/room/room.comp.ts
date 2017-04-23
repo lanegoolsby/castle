@@ -1,17 +1,28 @@
-import { Component, Input } from '@angular/core';
-import { Keep } from '../../../reducers/keep';
+import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { NgRedux } from '@angular-redux/store';
+import { IAppState } from '../../../reducers/root.reducer';
+import { Room } from '../../../reducers/room';
+import { Thing } from '../../../reducers/thing';
 
 @Component({
-    selector: 'cstl-keep',
-    templateUrl: 'keep.comp.html'
+    selector: 'cstl-room',
+    templateUrl: 'room.comp.html'
 })
 
-export class KeepComponent {
+export class RoomComponent implements OnInit {
 
-    @Input()
-    selectedKeep: Keep;
+    @Input() room: Room;
+    things$: Observable<Thing[]>;
 
-    constructor(){
-        
+    constructor(private ngRedux: NgRedux<IAppState>) {
+        this.things$ = ngRedux.select<Thing[]>('things').map(data => data.filter(r => r.roomId === this.room.id));
+    }
+
+    ngOnInit() {
+
+    }
+    decrement() {
+        this.ngRedux.dispatch(null);
     }
 }

@@ -33,6 +33,8 @@ export class DevicesComponent implements OnInit {
 
   increment() {
     let thing: Thing = {
+      id: Math.random(),
+      roomId: 1,
       type: THING_TYPES.LIGHT,
       name: 'Dummy',
       loading: false

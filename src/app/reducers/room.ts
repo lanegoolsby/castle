@@ -12,12 +12,30 @@ let InitialState = [{
   keepId: 1,
   name: 'Living Room',
   loading: false
+}, {
+  id: 4,
+  keepId: 1,
+  name: 'Kitchen',
+  loading: false
+}, {
+  id: 2,
+  keepId: 2,
+  name: 'Bedroom',
+  loading: false
+}, {
+  id: 3,
+  keepId: 3,
+  name: 'Mailbox',
+  loading: false
+}, {
+  name: 'Johnny\'s room',
+  keepId: 1,
+  id: 5,
+  loading: false
 }];
 
 export function RoomReducer(state = InitialState, action) {
   switch (action.type) {
-    case RoomConstants.GET_KEEP_ROOMS:
-      return state.filter(r => r.keepId === action.payload.id);
     case RoomConstants.CREATE:
       console.log('Adding room');
       break;

@@ -22,15 +22,12 @@ let InitalState: Keep[] = [{
 
 export function KeepReducer(state = InitalState, action) {
     switch (action.type) {
-        case KeepConstants.SELECT:
-            console.log('Selected Room');
-            return state.filter(k => k.id === action.payload.id);
-        /*case KeepConstants.ADD_ROOM:
-            console.log('Adding room');
+        case KeepConstants.CREATE:
+            console.log('Adding keep');
             break;
-        case KeepConstants.REMOVE_ROOM:
-            console.log('Removing room');
-            break;*/
+        case KeepConstants.DELETE:
+            console.log('Removing keep');
+            break;
     }
 
     return state;

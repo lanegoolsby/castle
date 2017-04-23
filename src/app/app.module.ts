@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DevicesComponent } from './components/devices/devices.comp';
 import { SettingsComponent } from './components/settings_comp/settings.component';
 import { KeepComponent } from './components/common/keep/keep.comp';
+import { RoomComponent } from './components/common/room/room.comp';
+import { ThingComponent } from './components/common/thing/thing.comp';
 
 import { routing } from './app.routing';
 
@@ -38,7 +40,9 @@ import 'hammerjs';
     HomeComponent,
     DevicesComponent,
     SettingsComponent,
-    KeepComponent
+    KeepComponent,
+    RoomComponent,
+    ThingComponent
   ],
   providers: [
     KeepActions,

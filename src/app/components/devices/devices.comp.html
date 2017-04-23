@@ -1,5 +1,7 @@
 <md-tab-group>
-    <md-tab *ngFor="let currKeep of keeps$ | async" label={{currKeep.name}}><cstl-keep [selectedKeep]="currKeep"></cstl-keep></md-tab>
+    <md-tab *ngFor="let currKeep of keeps$ | async" label={{currKeep.name}}>
+        <cstl-keep [selectedKeep]="currKeep"></cstl-keep>
+    </md-tab>
 </md-tab-group>
 <md-card>
     <button md-raised-button (click)="increment()">+</button>
@@ -7,8 +9,7 @@
 </md-card>
 <md-card>
     <h2 md-line>Nested card</h2>
-    Thing Count: {{(things$ | async)?.length}}
-    Keep Count: {{(keeps$ | async)?.length}}
+    Thing Count: {{(things$ | async)?.length}} Keep Count: {{(keeps$ | async)?.length}}
 </md-card>
 <md-card>
     <select name="things" [(ngModel)]="things$">

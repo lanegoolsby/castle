@@ -1,12 +1,12 @@
+// TODO: Condense the CREATE, EDIT, and DELETE actions into an interface?
 export const KeepConstants = {
-    SELECT: 'SELECT_KEEP',
-    /*EDIT: 'EDIT',
-    ADD_ROOM: 'ADD_ROOM',
-    REMOVE_ROOM: 'REMOVE_ROOM'*/
+    CREATE: 'ADD_KEEP',
+    EDIT: 'EDIT_KEEP',
+    DELETE: 'REMOVE_KEEP',
+    ADD_ROOM: 'ADD_ROOM_TO_KEEP'
 };
 
 export const RoomConstants = {
-    GET_KEEP_ROOMS: 'GET_KEEP_ROOMS',
     CREATE: 'CREATE_ROOM',
     EDIT: 'EDIT_ROOM',
     DELETE: 'DELETE_ROOM',
