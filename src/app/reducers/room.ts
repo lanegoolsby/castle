@@ -8,7 +8,6 @@ export class Room {
   loading: boolean;
 }
 
-
 export function RoomReducer(state = [], action: Action) {
   switch (action.type) {
     case RoomConstants.CREATE:

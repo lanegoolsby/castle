@@ -15,7 +15,13 @@ export class Thing {
     loading: boolean;
 }
 
-export function ThingReducer(state = [], action) {
+let InitalState: Thing[] = [{
+    type:THING_TYPES.LIGHT,
+    name:'Wall Light',
+    loading:false
+}]
+
+export function ThingReducer(state = InitalState, action) {
     switch (action.type) {
         case ThingConstants.CREATE:
             // state.push(action.payload);
