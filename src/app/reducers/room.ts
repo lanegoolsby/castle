@@ -38,7 +38,7 @@ export function RoomReducer(state = InitialState, action) {
   switch (action.type) {
     case RoomConstants.CREATE:
       console.log('Adding room');
-      break;
+      return [...state, action.payload];
     case RoomConstants.EDIT:
       console.log('Editing room');
       break;
