@@ -1,18 +1,18 @@
 import { Action } from 'redux';
-import { HouseConstants } from '../lib/constants';
+import { KeepConstants } from '../lib/constants';
 import { Room } from './room';
 
-export class House {
+export class Keep {
     rooms: Room[];
     loading: boolean;
 }
 
-export function HouseReducer(state = [], action: Action) {
+export function KeepReducer(state = [], action: Action) {
     switch (action.type) {
-        case HouseConstants.ADD_ROOM:
+        case KeepConstants.ADD_ROOM:
             console.log('Adding room');
             break;
-        case HouseConstants.REMOVE_ROOM:
+        case KeepConstants.REMOVE_ROOM:
             console.log('Removing room');
             break;
     }

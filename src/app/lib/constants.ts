@@ -1,4 +1,4 @@
-export const HouseConstants = {
+export const KeepConstants = {
     EDIT: 'EDIT',
     ADD_ROOM: 'ADD_ROOM',
     REMOVE_ROOM: 'REMOVE_ROOM'

@@ -12,7 +12,7 @@ import { routing } from './app.routing';
 
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 
-import { HouseActions, RoomActions, ThingActions } from './actions/actions';
+import { KeepActions, RoomActions, ThingActions } from './actions/actions';
 
 import { rootReducer, INITIAL_STATE, IAppState } from './reducers/root.reducer';
 
@@ -37,7 +37,7 @@ import 'hammerjs';
     SettingsComponent
   ],
   providers: [
-    HouseActions,
+    KeepActions,
     ThingActions,
     RoomActions
   ],

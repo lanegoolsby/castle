@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Thing } from '../reducers/thing';
 import { Room } from '../reducers/room';
-import { House } from '../reducers/house';
-import { HouseConstants, RoomConstants, ThingConstants } from '../lib/constants';
+import { Keep } from '../reducers/keep';
+import { KeepConstants, RoomConstants, ThingConstants } from '../lib/constants';
 
 @Injectable()
-export class HouseActions {
-    edit(house: House) {
+export class KeepActions {
+    edit(keep: Keep) {
         return {
-            type: HouseConstants.EDIT,
-            payload: house
+            type: KeepConstants.EDIT,
+            payload: keep
         };
     }
 
     addRoom(room: Room) {
         return {
-            type: HouseConstants.ADD_ROOM,
+            type: KeepConstants.ADD_ROOM,
             payload: room
         };
     }
 
     removeRoom(room: Room) {
         return {
-            type: HouseConstants.REMOVE_ROOM,
+            type: KeepConstants.REMOVE_ROOM,
             payload: room
         };
     }
