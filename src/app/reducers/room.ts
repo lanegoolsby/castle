@@ -19,12 +19,12 @@ let InitialState = [{
   loading: false
 }, {
   id: 2,
-  keepId: 2,
+  keepId: 3,
   name: 'Bedroom',
   loading: false
 }, {
   id: 3,
-  keepId: 3,
+  keepId: 2,
   name: 'Mailbox',
   loading: false
 }, {

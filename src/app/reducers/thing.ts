@@ -6,7 +6,7 @@ export enum THING_TYPES {
     TEMP,
     WINDOW,
     LOCK,
-    HALL
+    PIR
 }
 
 export class Thing {
@@ -21,19 +21,19 @@ let InitalState: Thing[] = [{
     id: 1,
     roomId: 1,
     type: THING_TYPES.LIGHT,
-    name: 'Wall Light',
+    name: 'Main Light',
     loading: false
 }, {
     id: 2,
     roomId: 1,
-    type: THING_TYPES.LIGHT,
+    type: THING_TYPES.PIR,
     name: 'Presence Sensor',
     loading: false
 }, {
     id: 3,
     roomId: 5,
     type: THING_TYPES.WINDOW,
-    name: 'Window sensor',
+    name: 'Sneak out portal',
     loading: false
 }];
 
