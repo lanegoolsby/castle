@@ -9,7 +9,7 @@ import '../style/app.scss';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'Castle .01';
+  title = 'Castle';
 
   toggleNav(nav: any) {
     nav.toggle();

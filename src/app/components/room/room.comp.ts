@@ -8,8 +8,8 @@ import { IThing, THING_TYPES } from '../../reducers/thing';
 
 @Component({
   selector: 'cstl-room',
-  templateUrl: './room.component.html',
-  styleUrls: ['./room.component.scss']
+  templateUrl: './room.comp.html',
+  styleUrls: ['./room.comp.scss']
 })
 export class RoomComponent implements OnInit {
   readonly things$: Observable<IThing>;
