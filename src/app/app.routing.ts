@@ -1,12 +1,12 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
-import { RoomComponent } from './components/room/room.comp';
+import { DevicesComponent } from './components/devices/devices.comp';
 import { SettingsComponent } from './components/settings_comp/settings.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'room', component: RoomComponent },
+  { path: 'devices', component: DevicesComponent },
   { path: 'settings', component: SettingsComponent }
 ];
 

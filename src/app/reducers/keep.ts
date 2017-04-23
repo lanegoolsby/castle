@@ -12,12 +12,12 @@ let InitalState: Keep[] = [{
     id: 1,
     loading: false
 }, {
-    name:'Mailbox',
-    id:2,
-    loading:false
+    name: 'Mailbox',
+    id: 2,
+    loading: false
 }];
 
-export function KeepReducer(state = InitalState, action: Action) {
+export function KeepReducer(state = [InitalState], action: Action) {
     switch (action.type) {
         case KeepConstants.ADD_ROOM:
             console.log('Adding room');

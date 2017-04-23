@@ -12,7 +12,7 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { RoomComponent } from './components/room/room.comp';
+import { DevicesComponent } from './components/devices/devices.comp';
 
 const mockNgRedux: any = {
   configureStore: () => { },
@@ -42,7 +42,7 @@ describe('App', () => {
       declarations: [
         AppComponent,
         HomeComponent,
-        RoomComponent
+        DevicesComponent
       ],
       providers: [
         { provide: NgRedux, useValue: mockNgRedux },

@@ -7,11 +7,11 @@ import { Room } from '../../reducers/room';
 import { Thing, THING_TYPES } from '../../reducers/thing';
 
 @Component({
-  selector: 'cstl-room',
-  templateUrl: './room.comp.html',
-  styleUrls: ['./room.comp.scss']
+  selector: 'cstl-devices',
+  templateUrl: './devices.comp.html',
+  styleUrls: ['./devices.comp.scss']
 })
-export class RoomComponent implements OnInit {
+export class DevicesComponent implements OnInit {
   readonly things$: Observable<Thing>;
   readonly rooms$: Observable<Room[]>;
 
@@ -25,7 +25,7 @@ export class RoomComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log('Hello room');
+    console.log('Hello devices');
   }
 
   increment() {

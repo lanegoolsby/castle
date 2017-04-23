@@ -21,7 +21,7 @@ let InitalState: Thing[] = [{
     loading: false
 }, {
     type: THING_TYPES.LIGHT,
-    name: 'Wall Light',
+    name: 'Presence Sensor',
     loading: false
 }];
 
