@@ -14,6 +14,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DevicesComponent } from './components/devices/devices.comp';
 import { KeepComponent } from './components/common/keep/keep.comp';
+import { RoomComponent } from './components/common/room/room.comp';
+import { ThingComponent } from './components/common/thing/thing.comp';
 
 const mockNgRedux: any = {
   configureStore: () => { },
@@ -44,7 +46,9 @@ describe('App', () => {
         AppComponent,
         HomeComponent,
         DevicesComponent,
-        KeepComponent
+        KeepComponent,
+        RoomComponent,
+        ThingComponent
       ],
       providers: [
         { provide: NgRedux, useValue: mockNgRedux },
