@@ -1,6 +1,7 @@
-<!--button md-icon-button (click)="increment()"><i class="material-icons">add</i></button-->
-<h3>Room Count: {{(rooms$ | async)?.length}}</h3>
-<button md-raised-button (click)="add()">Add Room</button>
+<cstl-modal [selectedParent]="selectedKeep" 
+            [modalText]="'Add a room'"
+            (modalResult)="processResult($event)" 
+            [modalType]="modalTypes.ROOM"></cstl-modal>
 <div *ngFor="let currRoom of rooms$ | async">
     <cstl-room [room]="currRoom"></cstl-room>
 </div>

@@ -18,3 +18,9 @@ export const ThingConstants = {
     EDIT: 'EDIT_THING',
     DELETE: 'DELETE_THING'
 };
+
+export const ModalTypes = {
+    KEEP: 'keep',
+    ROOM: 'room',
+    THING: 'thing'
+};

@@ -24,10 +24,13 @@ export function KeepReducer(state = InitalState, action) {
     switch (action.type) {
         case KeepConstants.CREATE:
             console.log('Adding keep');
-            break;
+            return [...state, action.payload];
         case KeepConstants.DELETE:
             console.log('Removing keep');
-            break;
+            let idx = state.indexOf(action.payload);
+            return [
+                ...state.slice(0, idx),
+                ...state.slice(idx + 1)];
     }
 
     return state;

@@ -2,20 +2,11 @@
     <md-tab *ngFor="let currKeep of keeps$ | async" label={{currKeep.name}}>
         <cstl-keep [selectedKeep]="currKeep"></cstl-keep>
     </md-tab>
+    <md-tab label="Add a Keep">
+        <cstl-modal 
+                    [selectedParent]="selectedKeep" 
+                    [modalText]="'Click to add'" 
+                    (modalResult)="processResult($event)" 
+                    [modalType]="modalTypes.KEEP"></cstl-modal>
+    </md-tab>
 </md-tab-group>
-<!--md-card>
-    <button md-raised-button (click)="increment()">+</button>
-    <button md-raised-button (click)="decrement()">-</button>
-</md-card>
-<md-card>
-    <h2 md-line>Nested card</h2>
-    Thing Count: {{(things$ | async)?.length}} Keep Count: {{(keeps$ | async)?.length}}
-</md-card>
-<md-card>
-    <select name="things" [(ngModel)]="things$">
-        <option [ngValue]="-1">--Select Thing--</option>
-        <ng-template ngFor let-thing [ngForOf]="things$ | async">
-          <option [ngValue]="thing.name">{{thing.name}}</option>
-        </ng-template>
-      </select>
-</md-card-->

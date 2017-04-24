@@ -16,6 +16,7 @@ import { DevicesComponent } from './components/devices/devices.comp';
 import { KeepComponent } from './components/common/keep/keep.comp';
 import { RoomComponent } from './components/common/room/room.comp';
 import { ThingComponent } from './components/common/thing/thing.comp';
+import { EditModalDialogComponent } from './components/common/modals/cstl.modal';
 
 const mockNgRedux: any = {
   configureStore: () => { },
@@ -48,7 +49,8 @@ describe('App', () => {
         DevicesComponent,
         KeepComponent,
         RoomComponent,
-        ThingComponent
+        ThingComponent,
+        EditModalDialogComponent
       ],
       providers: [
         { provide: NgRedux, useValue: mockNgRedux },

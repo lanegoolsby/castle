@@ -11,6 +11,10 @@ import { SettingsComponent } from './components/settings_comp/settings.component
 import { KeepComponent } from './components/common/keep/keep.comp';
 import { RoomComponent } from './components/common/room/room.comp';
 import { ThingComponent } from './components/common/thing/thing.comp';
+import { EditModalDialogComponent } from './components/common/modals/cstl.modal';
+import { KeepModalDialogComponent } from './components/common/modals/keep.modal';
+import { RoomModalDialogComponent } from './components/common/modals/room.modal';
+import { ThingModalDialogComponent } from './components/common/modals/thing.modal';
 
 import { routing } from './app.routing';
 
@@ -42,12 +46,21 @@ import 'hammerjs';
     SettingsComponent,
     KeepComponent,
     RoomComponent,
-    ThingComponent
+    ThingComponent,
+    EditModalDialogComponent,
+    KeepModalDialogComponent,
+    RoomModalDialogComponent,
+    ThingModalDialogComponent
   ],
   providers: [
     KeepActions,
     ThingActions,
     RoomActions
+  ],
+  entryComponents: [
+    KeepModalDialogComponent,
+    RoomModalDialogComponent,
+    ThingModalDialogComponent
   ],
   bootstrap: [
     AppComponent
