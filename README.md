@@ -1,7 +1,8 @@
-# This is a IoT thing-tracking web application. It is inspired by: 
+# This is a IoT thing-tracking web application.
 
-[Angular Webpack](https://github.com/preboot/angular-webpack.git)
-
+This app uses:
+[Webpack](https://github.com/preboot/angular-webpack.git)
 [Angular Redux](https://github.com/angular-redux)
+[Angular Material](https://material.angular.io/components/component/button)
 
 To use clone the repo with git, 'npm install' -> 'npm start'
