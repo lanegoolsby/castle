@@ -12,6 +12,7 @@ import { ModalTypes } from '../../../lib/constants';
 
 export class EditModalDialogComponent {
     @Input() selectedParent;
+    @Input() selectedItem;
     @Input() modalType;
     @Input() modalText;
     @Output() modalResult = new EventEmitter();
@@ -21,7 +22,10 @@ export class EditModalDialogComponent {
     openDialog() {
         let dialogRef;
         let config = new MdDialogConfig();
-        config.data = Object.assign({}, this.selectedParent);
+        config.data = {
+            parent: Object.assign({}, this.selectedParent),
+            item: Object.assign({}, this.selectedItem)
+        };
 
         switch (this.modalType) {
             case ModalTypes.KEEP:

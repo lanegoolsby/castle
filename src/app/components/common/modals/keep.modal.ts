@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Optional, Inject } from '@angular/core';
+import { Component, OnInit, Optional, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { Keep } from '../../../reducers/keep';
@@ -8,9 +8,9 @@ import { Keep } from '../../../reducers/keep';
     templateUrl: './keep.modal.html',
 })
 export class KeepModalDialogComponent implements OnInit {
-    @Input() keep: Keep;
-
+    keep: Keep;
     keepForm: FormGroup;
+
     constructor(
         @Optional() @Inject(MD_DIALOG_DATA) private dialogData: any,
         private dialogRef: MdDialogRef<KeepModalDialogComponent>,
@@ -18,7 +18,7 @@ export class KeepModalDialogComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.keep = this.dialogData;
+        this.keep = this.dialogData.item;
         if (!this.keep) {
             this.keep = new Keep();
         }

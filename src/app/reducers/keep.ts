@@ -25,6 +25,7 @@ export function KeepReducer(state = InitalState, action) {
     switch (action.type) {
         case KeepConstants.CREATE:
             console.log('Adding keep');
+            action.payload.id = Math.random();
             return [...state, action.payload];
         case KeepConstants.DELETE:
             console.log('Removing keep');
@@ -36,11 +37,11 @@ export function KeepReducer(state = InitalState, action) {
             for (let x = 0; x < state.length; x++) {
                 if (state[x].id === action.payload.id) {
                     state[x] = action.payload;
-                    return state;
+                    break;
                 }
             }
             return state;
+        default:
+            return state;
     }
-
-    return state;
 }

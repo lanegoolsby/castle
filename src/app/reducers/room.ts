@@ -38,10 +38,18 @@ export function RoomReducer(state = InitialState, action) {
   switch (action.type) {
     case RoomConstants.CREATE:
       console.log('Adding room');
+      // TODO: make this use real ID's and not randoms
+      action.payload.id = Math.random();
       return [...state, action.payload];
     case RoomConstants.EDIT:
       console.log('Editing room');
-      break;
+      for (let x = 0; x < state.length; x++) {
+        if (state[x].id === action.payload.id) {
+          state[x] = action.payload;
+          break;
+        }
+      }
+      return state;
     case RoomConstants.DELETE:
       console.log('Deleting room');
       let idx = state.indexOf(action.payload);
@@ -51,6 +59,7 @@ export function RoomReducer(state = InitialState, action) {
     case RoomConstants.ADD_THING:
       console.log('Adding thing to room');
       break;
+    default:
+      return state;
   }
-  return state;
 }

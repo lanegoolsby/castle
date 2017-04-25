@@ -2,7 +2,12 @@
     <md-card-title>
         <md-card-title>
             <md-menu #roomMenu="mdMenu">
-                <button md-menu-item>Edit</button>
+                <cstl-modal 
+                    [selectedItem]="room" 
+                    [modalText]="'Edit'"
+                    (modalResult)="processResult($event)" 
+                    [modalType]="modalTypes.ROOM">
+                </cstl-modal>
                 <button md-menu-item (click)="delete()">Delete</button>
                 <cstl-modal 
                     [selectedParent]="room" 

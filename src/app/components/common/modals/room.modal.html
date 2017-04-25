@@ -1,2 +1,10 @@
-<p>Room Modal</p>
-<button md-raised-button (click)="close()">close</button>
+<p>{{room.id ? 'Edit' : 'Add' }} a Room</p>
+<div>
+    <form [formGroup]="roomForm">
+        <input mdInput dividerColor="accent" placeholder="Room Name" formControlName="name">
+    </form>
+</div>
+<div style="padding-top: 10px">
+    <button md-raised-button (click)="close()">{{room.id ? 'Edit' : 'Add' }}</button>
+    <button md-raised-button (click)="close(false)">Cancel</button>
+</div>

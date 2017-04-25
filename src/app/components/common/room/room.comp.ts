@@ -41,7 +41,11 @@ export class RoomComponent {
 
     processResult(event) {
         if (event) {
-            this.ngRedux.dispatch(this.thingActions.add(event));
+            if (event.id) {
+                this.ngRedux.dispatch(this.roomActions.edit(event));
+            } else {
+                this.ngRedux.dispatch(this.roomActions.add(event));
+            }
         }
     }
 }

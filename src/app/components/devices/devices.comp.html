@@ -4,7 +4,7 @@
         <ng-template md-tab-label>
             <span>{{currKeep.name}}</span>
             <md-menu #keepMenu="mdMenu">
-                <cstl-modal [selectedParent]="currKeep" [modalText]="'Edit'" (modalResult)="processResult($event)" [modalType]="modalTypes.KEEP"></cstl-modal>
+                <cstl-modal [selectedItem]="currKeep" [modalText]="'Edit'" (modalResult)="processResult($event)" [modalType]="modalTypes.KEEP"></cstl-modal>
             </md-menu>
             <button md-icon-button [mdMenuTriggerFor]="keepMenu"><md-icon>more_vert</md-icon></button>
         </ng-template>
