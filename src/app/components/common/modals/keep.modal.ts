@@ -1,20 +1,43 @@
-import { Component } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { Component, Input, OnInit, Optional, Inject } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { Keep } from '../../../reducers/keep';
 
 @Component({
     selector: 'cstl-keep-modal',
     templateUrl: './keep.modal.html',
 })
-export class KeepModalDialogComponent {
-    constructor(public dialogRef: MdDialogRef<KeepModalDialogComponent>) { }
+export class KeepModalDialogComponent implements OnInit {
+    @Input() keep: Keep;
 
-    close() {
-        let k: Keep = {
-            name: 'Modal Dummy',
-            id: Math.random(),
-            loading: false
-        };
-        this.dialogRef.close(k);
+    keepForm: FormGroup;
+    constructor(
+        @Optional() @Inject(MD_DIALOG_DATA) private dialogData: any,
+        private dialogRef: MdDialogRef<KeepModalDialogComponent>,
+        private formBuilder: FormBuilder) {
+    }
+
+    ngOnInit() {
+        this.keep = this.dialogData;
+        if (!this.keep) {
+            this.keep = new Keep();
+        }
+
+        let nameCtrl = this.formBuilder.control(this.keep.name, [Validators.required]);
+
+        this.keepForm = this.formBuilder.group({
+            name: nameCtrl// ['', Validators.required]
+        });
+    }
+
+    close(submit = true) {
+        if (submit === true) {
+            if (this.keepForm.valid) {
+                this.keep.name = this.keepForm.value.name;
+                this.dialogRef.close(this.keep);
+            }
+        } else {
+            this.dialogRef.close(null);
+        }
     }
 }

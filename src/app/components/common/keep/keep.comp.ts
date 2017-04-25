@@ -4,7 +4,7 @@ import { NgRedux } from '@angular-redux/store';
 import { IAppState } from '../../../reducers/root.reducer';
 import { Keep } from '../../../reducers/keep';
 import { Room } from '../../../reducers/room';
-import { RoomActions } from '../../../actions/actions';
+import { RoomActions, KeepActions } from '../../../actions/actions';
 import { ModalTypes } from '../../../lib/constants';
 
 @Component({
@@ -12,7 +12,7 @@ import { ModalTypes } from '../../../lib/constants';
     templateUrl: 'keep.comp.html'
 })
 
-export class KeepComponent  {
+export class KeepComponent {
 
     @Input() selectedKeep: Keep;
     rooms$: Observable<Room[]>;
@@ -20,13 +20,18 @@ export class KeepComponent  {
 
     constructor(
         private ngRedux: NgRedux<IAppState>,
-        private roomActions: RoomActions) {
+        private roomActions: RoomActions,
+        private keepActions: KeepActions) {
         this.rooms$ = ngRedux.select<Room[]>('rooms').map(data => data.filter(r => r.keepId === this.selectedKeep.id));
     }
 
     processResult(event) {
         if (event) {
-            this.ngRedux.dispatch(this.roomActions.add(event));
+            if (event.id) {
+                this.ngRedux.dispatch(this.roomActions.add(event));
+            } else {
+                this.ngRedux.dispatch(this.keepActions.add(event));
+            }
         }
     }
 }

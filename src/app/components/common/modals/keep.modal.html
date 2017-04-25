@@ -1,2 +1,10 @@
-<p>Keep Modal</p>
-<button md-raised-button (click)="close()">close</button>
+<p>{{keep.id ? 'Edit' : 'Add' }} a Keep</p>
+<div>
+    <form [formGroup]="keepForm">
+        <input mdInput dividerColor="accent" placeholder="Keep Name" formControlName="name">
+    </form>
+</div>
+<div style="padding-top: 10px">
+    <button md-raised-button (click)="close()">{{keep.id ? 'Edit' : 'Add' }}</button>
+    <button md-raised-button (click)="close(false)">Cancel</button>
+</div>

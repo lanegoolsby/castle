@@ -1,12 +1,13 @@
+<cstl-modal [modalText]="'Add a Keep'" (modalResult)="processResult($event)" [modalType]="modalTypes.KEEP"></cstl-modal>
 <md-tab-group md-dynamic-height="false">
-    <md-tab *ngFor="let currKeep of keeps$ | async" label={{currKeep.name}}>
+    <md-tab *ngFor="let currKeep of keeps$ | async">
+        <ng-template md-tab-label>
+            <span>{{currKeep.name}}</span>
+            <md-menu #keepMenu="mdMenu">
+                <cstl-modal [selectedParent]="currKeep" [modalText]="'Edit'" (modalResult)="processResult($event)" [modalType]="modalTypes.KEEP"></cstl-modal>
+            </md-menu>
+            <button md-icon-button [mdMenuTriggerFor]="keepMenu"><md-icon>more_vert</md-icon></button>
+        </ng-template>
         <cstl-keep [selectedKeep]="currKeep"></cstl-keep>
-    </md-tab>
-    <md-tab label="Add a Keep">
-        <cstl-modal 
-                    [selectedParent]="selectedKeep" 
-                    [modalText]="'Click to add'" 
-                    (modalResult)="processResult($event)" 
-                    [modalType]="modalTypes.KEEP"></cstl-modal>
     </md-tab>
 </md-tab-group>

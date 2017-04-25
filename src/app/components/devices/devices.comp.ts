@@ -14,6 +14,7 @@ import { ModalTypes } from '../../lib/constants';
 export class DevicesComponent {
   readonly keeps$: Observable<Keep[]>;
   readonly modalTypes = ModalTypes;
+  readonly selectedKeep: Keep;
 
   constructor(
     private keepActions: KeepActions,
@@ -23,7 +24,11 @@ export class DevicesComponent {
 
   processResult(event) {
     if (event) {
-      this.ngRedux.dispatch(this.keepActions.add(event));
+      if (event.id) {
+        this.ngRedux.dispatch(this.keepActions.edit(event));
+      } else {
+        this.ngRedux.dispatch(this.keepActions.add(event));
+      }
     }
   }
 }

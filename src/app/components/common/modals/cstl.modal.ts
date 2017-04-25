@@ -20,26 +20,26 @@ export class EditModalDialogComponent {
 
     openDialog() {
         let dialogRef;
-        let config;
+        let config = new MdDialogConfig();
+        config.data = Object.assign({}, this.selectedParent);
 
         switch (this.modalType) {
             case ModalTypes.KEEP:
-                dialogRef = this.dialog.open(KeepModalDialogComponent);
+                dialogRef = this.dialog.open(KeepModalDialogComponent, config);
                 break;
             case ModalTypes.ROOM:
-                config = new MdDialogConfig();
-                config.data = this.selectedParent;
                 dialogRef = this.dialog.open(RoomModalDialogComponent, config);
                 break;
             case ModalTypes.THING:
-                config = new MdDialogConfig();
-                config.data = this.selectedParent;
                 dialogRef = this.dialog.open(ThingModalDialogComponent, config);
                 break;
         }
 
+
         dialogRef.afterClosed().subscribe(result => {
-            this.modalResult.emit(result);
+            if (result !== null) {
+                this.modalResult.emit(result);
+            }
         });
     }
 }

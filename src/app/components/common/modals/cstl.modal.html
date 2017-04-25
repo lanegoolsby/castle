@@ -1,1 +1,2 @@
-<button md-button (click)="openDialog()">{{modalText}}</button>
+<button *ngIf="modalText" md-button (click)="openDialog()">{{modalText}}</button>
+<i *ngIf="!modalText" class="material-icons" (click)="openDialog()">mode_edit</i>

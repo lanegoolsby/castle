@@ -1,5 +1,6 @@
 import { KeepConstants } from '../lib/constants';
 
+// Move this to its own class file
 export class Keep {
     name: string;
     id: number;
@@ -31,6 +32,14 @@ export function KeepReducer(state = InitalState, action) {
             return [
                 ...state.slice(0, idx),
                 ...state.slice(idx + 1)];
+        case KeepConstants.EDIT:
+            for (let x = 0; x < state.length; x++) {
+                if (state[x].id === action.payload.id) {
+                    state[x] = action.payload;
+                    return state;
+                }
+            }
+            return state;
     }
 
     return state;
