@@ -40,7 +40,7 @@ export function KeepReducer(state = InitalState, action) {
                     break;
                 }
             }
-            return state;
+            return [...state];
         default:
             return state;
     }

@@ -49,7 +49,7 @@ export function RoomReducer(state = InitialState, action) {
           break;
         }
       }
-      return state;
+      return [...state];
     case RoomConstants.DELETE:
       console.log('Deleting room');
       let idx = state.indexOf(action.payload);
