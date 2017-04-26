@@ -52,10 +52,8 @@ export function RoomReducer(state = InitialState, action) {
       return [...state];
     case RoomConstants.DELETE:
       console.log('Deleting room');
-      let idx = state.indexOf(action.payload);
-      return [
-        ...state.slice(0, idx),
-        ...state.slice(idx + 1)];
+      let a = state.filter(i => i.id !== action.payload.id);
+      return [...a];
     case RoomConstants.ADD_THING:
       console.log('Adding thing to room');
       break;

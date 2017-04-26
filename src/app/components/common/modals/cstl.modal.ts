@@ -3,6 +3,7 @@ import { MdDialog, MdDialogConfig } from '@angular/material';
 import { KeepModalDialogComponent } from './keep.modal';
 import { RoomModalDialogComponent } from './room.modal';
 import { ThingModalDialogComponent } from './thing.modal';
+import { DeleteModalDialogComponent } from './delete.modal';
 import { ModalTypes } from '../../../lib/constants';
 
 @Component({
@@ -36,6 +37,12 @@ export class EditModalDialogComponent {
                 break;
             case ModalTypes.THING:
                 dialogRef = this.dialog.open(ThingModalDialogComponent, config);
+                break;
+            case ModalTypes.DELETE:
+                dialogRef = this.dialog.open(DeleteModalDialogComponent, config);
+                break;
+            default:
+                console.error('Unknown modal type');
                 break;
         }
 

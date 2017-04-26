@@ -2,19 +2,26 @@
     <md-card-title>
         <md-card-title>
             <md-menu #roomMenu="mdMenu">
-                <cstl-modal 
-                    [selectedItem]="room" 
-                    [modalText]="'Edit'"
-                    (modalResult)="processResult($event)" 
-                    [modalType]="modalTypes.ROOM">
-                </cstl-modal>
-                <button md-menu-item (click)="delete()">Delete</button>
-                <cstl-modal 
-                    [selectedParent]="room" 
-                    [modalText]="'Add a thing'"
-                    (modalResult)="processResult($event)" 
-                    [modalType]="modalTypes.THING">
-                </cstl-modal>
+                    <cstl-modal 
+                        [selectedItem]="room" 
+                        [modalText]="'Edit'"
+                        (modalResult)="processModalResult($event)" 
+                        [modalType]="modalTypes.ROOM">
+                    </cstl-modal>
+                    <br/>
+                    <cstl-modal 
+                        [selectedItem]="room" 
+                        [modalText]="'Delete'"
+                        (modalResult)="deleteRoom($event)" 
+                        [modalType]="modalTypes.DELETE">
+                    </cstl-modal>
+                    <br/>
+                    <cstl-modal 
+                        [selectedParent]="room" 
+                        [modalText]="'Add a thing'"
+                        (modalResult)="processModalResult($event)" 
+                        [modalType]="modalTypes.THING">
+                    </cstl-modal>
             </md-menu>
             <button md-icon-button [mdMenuTriggerFor]="roomMenu"><md-icon>more_vert</md-icon></button>
             <span>{{room.name}}</span>

@@ -22,5 +22,6 @@ export const ThingConstants = {
 export const ModalTypes = {
     KEEP: 'keep',
     ROOM: 'room',
-    THING: 'thing'
+    THING: 'thing',
+    DELETE: 'delete'
 };

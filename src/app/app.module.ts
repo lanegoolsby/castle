@@ -15,6 +15,7 @@ import { EditModalDialogComponent } from './components/common/modals/cstl.modal'
 import { KeepModalDialogComponent } from './components/common/modals/keep.modal';
 import { RoomModalDialogComponent } from './components/common/modals/room.modal';
 import { ThingModalDialogComponent } from './components/common/modals/thing.modal';
+import { DeleteModalDialogComponent } from './components/common/modals/delete.modal';
 
 import { routing } from './app.routing';
 
@@ -51,7 +52,8 @@ import 'hammerjs';
     EditModalDialogComponent,
     KeepModalDialogComponent,
     RoomModalDialogComponent,
-    ThingModalDialogComponent
+    ThingModalDialogComponent,
+    DeleteModalDialogComponent
   ],
   providers: [
     KeepActions,
@@ -61,7 +63,8 @@ import 'hammerjs';
   entryComponents: [
     KeepModalDialogComponent,
     RoomModalDialogComponent,
-    ThingModalDialogComponent
+    ThingModalDialogComponent,
+    DeleteModalDialogComponent
   ],
   bootstrap: [
     AppComponent
