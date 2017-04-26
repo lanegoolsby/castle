@@ -25,11 +25,11 @@ export class KeepComponent {
     }
 
     processResult(event) {
-        if (event) {
-            if (event.id) {
-                this.ngRedux.dispatch(this.roomActions.edit(event));
+        if (event.data) {
+            if (event.data.id) {
+                this.ngRedux.dispatch(this.roomActions.edit(event.data));
             } else {
-                this.ngRedux.dispatch(this.roomActions.add(event));
+                this.ngRedux.dispatch(this.roomActions.add(event.data));
             }
         }
     }

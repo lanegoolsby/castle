@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { Room } from '../../../reducers/room';
 import { Keep } from '../../../reducers/keep';
+import { ModalTypes } from '../../../lib/constants';
 
 @Component({
     selector: 'cstl-room-modal',
@@ -42,7 +43,10 @@ export class RoomModalDialogComponent implements OnInit {
                 if (this.keep.id) {
                     this.room.keepId = this.keep.id;
                 }
-                this.dialogRef.close(this.room);
+                this.dialogRef.close({
+                    type: ModalTypes.ROOM,
+                    data: this.room
+                });
             }
         } else {
             this.dialogRef.close(null);

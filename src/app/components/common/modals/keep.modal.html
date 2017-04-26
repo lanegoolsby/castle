@@ -1,10 +1,12 @@
-<p>{{keep.id ? 'Edit' : 'Add' }} a Keep</p>
-<div>
+<md-toolbar>{{keep.id ? 'Edit' : 'Add' }} a Keep</md-toolbar>
+<div style="padding-top: 20px">
     <form [formGroup]="keepForm">
+                    <md-input-container>
         <input mdInput dividerColor="accent" placeholder="Keep Name" formControlName="name">
+                    </md-input-container>
     </form>
 </div>
-<div style="padding-top: 10px">
+<div style="padding-top: 20px">
     <button md-raised-button (click)="close()">{{keep.id ? 'Edit' : 'Add' }}</button>
     <button md-raised-button (click)="close(false)">Cancel</button>
 </div>

@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NgRedux } from '@angular-redux/store';
 import { IAppState } from '../../../reducers/root.reducer';
-import { RoomActions, /*ThingActions*/ } from '../../../actions/actions';
+import { RoomActions, ThingActions } from '../../../actions/actions';
 import { Room } from '../../../reducers/room';
-import { Thing/*, THING_TYPES*/ } from '../../../reducers/thing';
+import { Thing } from '../../../reducers/thing';
 import { ModalTypes } from '../../../lib/constants';
 
 @Component({
@@ -20,20 +20,24 @@ export class RoomComponent {
 
     constructor(private ngRedux: NgRedux<IAppState>,
         private roomActions: RoomActions,
-        /*private thingActions: ThingActions*/) {
+        private thingActions: ThingActions) {
         this.things$ = ngRedux.select<Thing[]>('things').map(data => data.filter(r => r.roomId === this.room.id));
     }
 
     deleteRoom(event) {
-        this.ngRedux.dispatch(this.roomActions.delete(event));
+        this.ngRedux.dispatch(this.roomActions.delete(event.data));
     }
 
     processModalResult(event) {
-        if (event) {
-            if (event.id) {
-                this.ngRedux.dispatch(this.roomActions.edit(event));
+        if (event.data) {
+            if (event.type === ModalTypes.ROOM) {
+                if (event.data.id) {
+                    this.ngRedux.dispatch(this.roomActions.edit(event.data));
+                } else {
+                    this.ngRedux.dispatch(this.roomActions.add(event.data));
+                }
             } else {
-                this.ngRedux.dispatch(this.roomActions.add(event));
+                this.ngRedux.dispatch(this.thingActions.add(event.data));
             }
         }
     }

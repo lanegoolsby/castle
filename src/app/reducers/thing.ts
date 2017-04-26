@@ -1,18 +1,9 @@
-// import { Action } from 'redux';
 import { ThingConstants } from '../lib/constants';
-
-export enum THING_TYPES {
-    LIGHT,
-    TEMP,
-    WINDOW,
-    LOCK,
-    PIR
-}
 
 export class Thing {
     id: number;
     roomId: number;
-    type: THING_TYPES;
+    thingTypeId: number;
     name: string;
     loading: boolean;
 }
@@ -20,34 +11,42 @@ export class Thing {
 let InitalState: Thing[] = [{
     id: 1,
     roomId: 1,
-    type: THING_TYPES.LIGHT,
+    thingTypeId: 1,
     name: 'Main Light',
     loading: false
 }, {
     id: 2,
     roomId: 1,
-    type: THING_TYPES.PIR,
+    thingTypeId: 5,
     name: 'Presence Sensor',
     loading: false
 }, {
     id: 3,
     roomId: 5,
-    type: THING_TYPES.WINDOW,
+    thingTypeId: 3,
     name: 'Sneak out portal',
     loading: false
 }];
 
+// TODO: This really needs to be extracted into an interface
 export function ThingReducer(state = InitalState, action) {
     switch (action.type) {
         case ThingConstants.CREATE:
             console.log('Added thing');
+            action.payload.id = Math.random();
             return [...state, action.payload];
         case ThingConstants.DELETE:
             console.log('Removing thing');
-            let idx = state.indexOf(action.payload);
-            return [
-                ...state.slice(0, idx),
-                ...state.slice(idx + 1)];
+            let a = state.filter(i => i.id !== action.payload.id);
+            return [...a];
+        case ThingConstants.EDIT:
+            for (let x = 0; x < state.length; x++) {
+                if (state[x].id === action.payload.id) {
+                    state[x] = action.payload;
+                    break;
+                }
+            }
+            return [...state];
         default:
             return state;
     }

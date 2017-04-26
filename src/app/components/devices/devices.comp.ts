@@ -23,11 +23,11 @@ export class DevicesComponent {
   }
 
   processResult(event) {
-    if (event) {
-      if (event.id) {
-        this.ngRedux.dispatch(this.keepActions.edit(event));
+    if (event.data) {
+      if (event.data.id) {
+        this.ngRedux.dispatch(this.keepActions.edit(event.data));
       } else {
-        this.ngRedux.dispatch(this.keepActions.add(event));
+        this.ngRedux.dispatch(this.keepActions.add(event.data));
       }
     }
   }

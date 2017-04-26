@@ -1,5 +1,6 @@
 import { Component, OnInit, Optional, Inject } from '@angular/core';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { ModalTypes } from '../../../lib/constants';
 
 @Component({
     selector: 'cstl-delete-modal',
@@ -22,7 +23,10 @@ export class DeleteModalDialogComponent implements OnInit {
 
     close(submit = true) {
         if (submit === true) {
-            this.dialogRef.close(this.objectToDelete);
+            this.dialogRef.close({
+                type: ModalTypes.DELETE,
+                data: this.objectToDelete
+            });
         } else {
             this.dialogRef.close(null);
         }

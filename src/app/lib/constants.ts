@@ -19,6 +19,11 @@ export const ThingConstants = {
     DELETE: 'DELETE_THING'
 };
 
+export const ThingTypeConstants = {
+    CREATE: 'CREATE_THING_TYPE',
+    DELETE: 'DELETE_THING_TYPE',
+};
+
 export const ModalTypes = {
     KEEP: 'keep',
     ROOM: 'room',

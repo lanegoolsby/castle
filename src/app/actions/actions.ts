@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Thing } from '../reducers/thing';
 import { Room } from '../reducers/room';
 import { Keep } from '../reducers/keep';
-import { KeepConstants, RoomConstants, ThingConstants } from '../lib/constants';
+import { ThingType } from '../reducers/thingtype';
+import { KeepConstants, RoomConstants, ThingConstants, ThingTypeConstants } from '../lib/constants';
 
 @Injectable()
 export class KeepActions {
@@ -49,13 +50,6 @@ export class RoomActions {
             payload: room
         };
     }
-
-    /*addThing(thing: Thing) {
-        return {
-            type: RoomConstants.ADD_THING,
-            payload: thing
-        };
-    }*/
 }
 
 @Injectable()
@@ -81,3 +75,21 @@ export class ThingActions {
         };
     }
 }
+
+@Injectable()
+export class ThingTypeActions {
+    add(thingType: ThingType) {
+        return {
+            type: ThingTypeConstants.CREATE,
+            payload: thingType
+        };
+    }
+
+    remove(thingType: ThingType) {
+        return {
+            type: ThingTypeConstants.DELETE,
+            payload: thingType
+        };
+    }
+}
+// TODO: add the thing type actions...

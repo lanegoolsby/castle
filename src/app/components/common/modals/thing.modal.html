@@ -1,2 +1,27 @@
-<p>Thing Modal</p>
-<button md-raised-button (click)="close()">close</button>
+<md-toolbar>{{thing.id ? 'Edit' : 'Add' }} a Thing</md-toolbar>
+<div>
+    <form [formGroup]="thingForm">
+        <table cellspacing="0">
+            <tr style="padding-top: 25px;">
+                <td>
+                    <md-input-container>
+                        <input mdInput dividerColor="accent" placeholder="Thing Name" formControlName="name">
+                    </md-input-container>
+                </td>
+            </tr>
+            <tr style="padding-top: 25px;">
+                <td>
+                    <md-select placeholder="Thing Type" formControlName="type">
+                        <md-option *ngFor="let thingT of thingTypes$ | async" [value]="thingT.id">
+                            {{thingT.name}}
+                        </md-option>
+                    </md-select>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div style="padding-top: 20px">
+    <button md-raised-button (click)="close()">{{thing.id ? 'Edit' : 'Add' }}</button>
+    <button md-raised-button (click)="close(false)">Cancel</button>
+</div>

@@ -34,6 +34,7 @@ let InitialState = [{
   loading: false
 }];
 
+// TODO: This really needs to be extracted into an interface
 export function RoomReducer(state = InitialState, action) {
   switch (action.type) {
     case RoomConstants.CREATE:
