@@ -1,8 +1,7 @@
 import { Component, Optional, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
-import { Room } from 'reducers/room';
-import { Keep } from 'reducers/keep';
+import { Room, Keep } from 'model/index';
 import { ModalTypes } from 'lib/constants';
 
 @Component({

@@ -79,6 +79,7 @@ module.exports = function makeWebpackConfig() {
       actions: srcPath('app/actions'),
       reducers: srcPath('app/reducers'),
       components: srcPath('app/components'),
+      model: srcPath('app/model'),
       lib: srcPath('app/lib')
     }
   };

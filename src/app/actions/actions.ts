@@ -1,7 +1,4 @@
-import { Thing } from '../reducers/thing';
-import { Room } from '../reducers/room';
-import { Keep } from '../reducers/keep';
-import { ThingType } from '../reducers/thingtype';
+import { Thing, Room, Keep, ThingType } from '../model';
 import { KeepConstants, RoomConstants, ThingConstants, ThingTypeConstants } from '../lib/constants';
 
 export class KeepActions {

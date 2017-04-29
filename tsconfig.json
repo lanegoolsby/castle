@@ -23,6 +23,9 @@
       "components/*": [
         "app/components/*"
       ],
+      "model/*":[
+        "app/model/*"
+      ],
       "lib/*": [
         "app/lib/*"
       ]

@@ -4,9 +4,7 @@ import { NgRedux } from '@angular-redux/store';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { IAppState } from 'reducers/root.reducer';
-import { Room } from 'reducers/room';
-import { Thing } from 'reducers/thing';
-import { ThingType } from 'reducers/thingtype';
+import { Room, Thing, ThingType } from 'model/index';
 import { ModalTypes } from 'lib/constants';
 
 @Component({
