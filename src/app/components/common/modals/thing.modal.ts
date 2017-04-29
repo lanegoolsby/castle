@@ -1,13 +1,13 @@
 import { Component, Optional, Inject, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NgRedux } from '@angular-redux/store';
-import { IAppState } from '../../../reducers/root.reducer';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
-import { Room } from '../../../reducers/room';
-import { Thing } from '../../../reducers/thing';
-import { ThingType } from '../../../reducers/thingtype';
-import { ModalTypes } from '../../../lib/constants';
+import { IAppState } from 'reducers/root.reducer';
+import { Room } from 'reducers/room';
+import { Thing } from 'reducers/thing';
+import { ThingType } from 'reducers/thingtype';
+import { ModalTypes } from 'lib/constants';
 
 @Component({
     selector: 'cstl-thing-modal',

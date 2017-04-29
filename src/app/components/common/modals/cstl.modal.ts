@@ -4,7 +4,7 @@ import { KeepModalDialogComponent } from './keep.modal';
 import { RoomModalDialogComponent } from './room.modal';
 import { ThingModalDialogComponent } from './thing.modal';
 import { DeleteModalDialogComponent } from './delete.modal';
-import { ModalTypes } from '../../../lib/constants';
+import { ModalTypes } from 'lib/constants';
 
 @Component({
     selector: 'cstl-modal',

@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NgRedux } from '@angular-redux/store';
-import { IAppState } from '../../../reducers/root.reducer';
-import { ThingActions } from '../../../actions/actions';
-import { Thing } from '../../../reducers/thing';
-import { ThingType } from '../../../reducers/thingtype';
-import { ModalTypes } from '../../../lib/constants';
+import { IAppState } from 'reducers/root.reducer';
+import { ThingActions } from 'actions/actions';
+import { Thing } from 'reducers/thing';
+import { ThingType } from 'reducers/thingtype';
+import { ModalTypes } from 'lib/constants';
 
 @Component({
     selector: 'cstl-thing',

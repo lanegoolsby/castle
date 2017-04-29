@@ -1,8 +1,8 @@
 import { Component, OnInit, Optional, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
-import { Keep } from '../../../reducers/keep';
-import { ModalTypes } from '../../../lib/constants';
+import { Keep } from 'reducers/keep';
+import { ModalTypes } from 'lib/constants';
 
 @Component({
     selector: 'cstl-keep-modal',
