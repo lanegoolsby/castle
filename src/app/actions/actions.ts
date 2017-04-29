@@ -1,11 +1,9 @@
-import { Injectable } from '@angular/core';
 import { Thing } from '../reducers/thing';
 import { Room } from '../reducers/room';
 import { Keep } from '../reducers/keep';
 import { ThingType } from '../reducers/thingtype';
 import { KeepConstants, RoomConstants, ThingConstants, ThingTypeConstants } from '../lib/constants';
 
-@Injectable()
 export class KeepActions {
     add(keep: Keep) {
         return {
@@ -28,7 +26,6 @@ export class KeepActions {
     }
 }
 
-@Injectable()
 export class RoomActions {
     add(room: Room) {
         return {
@@ -52,7 +49,6 @@ export class RoomActions {
     }
 }
 
-@Injectable()
 export class ThingActions {
     add(thing: Thing) {
         return {
@@ -76,7 +72,6 @@ export class ThingActions {
     }
 }
 
-@Injectable()
 export class ThingTypeActions {
     add(thingType: ThingType) {
         return {
