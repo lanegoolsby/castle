@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NgRedux } from '@angular-redux/store';
-import { IAppState } from 'reducers/root.reducer';
+import { IAppState } from 'reducers';
 import { Keep } from 'model/index';
-import { KeepActions } from 'actions/actions';
+import { KeepActions } from 'actions';
 import { ModalTypes } from 'lib/constants';
 
 @Component({

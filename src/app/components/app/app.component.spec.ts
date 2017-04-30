@@ -7,7 +7,7 @@ import { StoreCreator } from 'redux';
 import { MaterialModule } from '@angular/material';
 
 import * as comps from 'components/index';
-import { ThingActions } from 'actions/actions';
+import { ThingActions } from 'actions';
 
 const mockNgRedux: any = {
   configureStore: () => { },

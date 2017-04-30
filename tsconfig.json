@@ -14,11 +14,11 @@
     ],
     "baseUrl": "src",
     "paths": {
-      "actions/*": [
-        "app/actions/*"
+      "actions": [
+        "app/actions/actions"
       ],
-      "reducers/*": [
-        "app/reducers/*"
+      "reducers": [
+        "app/reducers/root.reducer"
       ],
       "components/*": [
         "app/components/*"
