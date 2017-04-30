@@ -5,7 +5,6 @@ import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { rootReducer, INITIAL_STATE, IAppState } from './reducers/root.reducer';
 import * as comps from './components';
@@ -29,7 +28,7 @@ import 'hammerjs';
     BrowserAnimationsModule
   ],
   declarations: [
-    AppComponent,
+    comps.AppComponent,
     comps.HomeComponent,
     comps.DevicesComponent,
     comps.SettingsComponent,
@@ -54,7 +53,7 @@ import 'hammerjs';
     comps.DeleteModalDialogComponent
   ],
   bootstrap: [
-    AppComponent
+    comps.AppComponent
   ]
 })
 export class AppModule {

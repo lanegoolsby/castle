@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-import '../style/app.scss';
+import '../../../style/app.scss';
 
 @Component({
   selector: 'cstl-app',

@@ -1,22 +1,13 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { APP_BASE_HREF } from '@angular/common';
-
 import { NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { FormsModule } from '@angular/forms';
 import { StoreCreator } from 'redux';
-
-import { ThingActions } from './actions/actions';
-
 import { MaterialModule } from '@angular/material';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { DevicesComponent } from './components/devices/devices.comp';
-import { KeepComponent } from './components/common/keep/keep.comp';
-import { RoomComponent } from './components/common/room/room.comp';
-import { ThingComponent } from './components/common/thing/thing.comp';
-import { EditModalDialogComponent } from './components/common/modals/cstl.modal';
+import * as comps from 'components/index';
+import { ThingActions } from 'actions/actions';
 
 const mockNgRedux: any = {
   configureStore: () => { },
@@ -44,13 +35,13 @@ describe('App', () => {
         FormsModule
       ],
       declarations: [
-        AppComponent,
-        HomeComponent,
-        DevicesComponent,
-        KeepComponent,
-        RoomComponent,
-        ThingComponent,
-        EditModalDialogComponent
+        comps.AppComponent,
+        comps.HomeComponent,
+        comps.DevicesComponent,
+        comps.KeepComponent,
+        comps.RoomComponent,
+        comps.ThingComponent,
+        comps.EditModalDialogComponent
       ],
       providers: [
         { provide: NgRedux, useValue: mockNgRedux },
@@ -62,7 +53,7 @@ describe('App', () => {
   }));
 
   it('should have an url', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(comps.AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Castle');
   }));

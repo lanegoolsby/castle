@@ -9,3 +9,4 @@ export * from './common/modals/delete.modal';
 export * from './common/modals/keep.modal';
 export * from './common/modals/room.modal';
 export * from './common/modals/thing.modal';
+export * from './app/app.component';
