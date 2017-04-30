@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
 import * as types from 'model/index';
+import { KeepReducer } from './keep';
+import { RoomReducer } from './room';
+import { ThingReducer } from './thing';
+import { ThingTypeReducer } from './thingType';
 
 export interface IAppState {
     keeps: types.Keep[];
@@ -16,8 +20,8 @@ export const INITIAL_STATE: IAppState = {
 };
 
 export const rootReducer = combineReducers<IAppState>({
-    keeps: types.KeepReducer,
-    rooms: types.RoomReducer,
-    things: types.ThingReducer,
-    thingTypes: types.ThingTypeReducer
+    keeps: KeepReducer,
+    rooms: RoomReducer,
+    things: ThingReducer,
+    thingTypes: ThingTypeReducer
 });
