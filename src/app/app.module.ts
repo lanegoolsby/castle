@@ -5,17 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { DevicesComponent } from './components/devices/devices.comp';
-import { SettingsComponent } from './components/settings.comp/settings.component';
-import { KeepComponent } from './components/common/keep/keep.comp';
-import { RoomComponent } from './components/common/room/room.comp';
-import { ThingComponent } from './components/common/thing/thing.comp';
-import { EditModalDialogComponent } from './components/common/modals/cstl.modal';
-import { KeepModalDialogComponent } from './components/common/modals/keep.modal';
-import { RoomModalDialogComponent } from './components/common/modals/room.modal';
-import { ThingModalDialogComponent } from './components/common/modals/thing.modal';
-import { DeleteModalDialogComponent } from './components/common/modals/delete.modal';
+import * as comps from './components';
 
 import { routing } from './app.routing';
 
@@ -43,17 +33,17 @@ import 'hammerjs';
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
-    DevicesComponent,
-    SettingsComponent,
-    KeepComponent,
-    RoomComponent,
-    ThingComponent,
-    EditModalDialogComponent,
-    KeepModalDialogComponent,
-    RoomModalDialogComponent,
-    ThingModalDialogComponent,
-    DeleteModalDialogComponent
+    comps.HomeComponent,
+    comps.DevicesComponent,
+    comps.SettingsComponent,
+    comps.KeepComponent,
+    comps.RoomComponent,
+    comps.ThingComponent,
+    comps.EditModalDialogComponent,
+    comps.KeepModalDialogComponent,
+    comps.RoomModalDialogComponent,
+    comps.ThingModalDialogComponent,
+    comps.DeleteModalDialogComponent
   ],
   providers: [
     KeepActions,
@@ -61,10 +51,10 @@ import 'hammerjs';
     RoomActions
   ],
   entryComponents: [
-    KeepModalDialogComponent,
-    RoomModalDialogComponent,
-    ThingModalDialogComponent,
-    DeleteModalDialogComponent
+    comps.KeepModalDialogComponent,
+    comps.RoomModalDialogComponent,
+    comps.ThingModalDialogComponent,
+    comps.DeleteModalDialogComponent
   ],
   bootstrap: [
     AppComponent

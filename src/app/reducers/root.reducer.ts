@@ -1,24 +1,23 @@
 import { combineReducers } from 'redux';
-import { Keep, KeepReducer, Room, RoomReducer, Thing, ThingReducer, ThingType, ThingTypeReducer } from 'model/index';
+import * as types from 'model/index';
 
 export interface IAppState {
-    keeps: Keep[];
-    rooms: Room[];
-    things: Thing[];
-    thingTypes: ThingType[];
+    keeps: types.Keep[];
+    rooms: types.Room[];
+    things: types.Thing[];
+    thingTypes: types.ThingType[];
 }
 
 export const INITIAL_STATE: IAppState = {
-    keeps: Keep[0],
-    rooms: Room[0],
-    things: Thing[0],
-    thingTypes: ThingType[0]
-
+    keeps: types.Keep[0],
+    rooms: types.Room[0],
+    things: types.Thing[0],
+    thingTypes: types.ThingType[0]
 };
 
 export const rootReducer = combineReducers<IAppState>({
-    keeps: KeepReducer,
-    rooms: RoomReducer,
-    things: ThingReducer,
-    thingTypes: ThingTypeReducer
+    keeps: types.KeepReducer,
+    rooms: types.RoomReducer,
+    things: types.ThingReducer,
+    thingTypes: types.ThingTypeReducer
 });
