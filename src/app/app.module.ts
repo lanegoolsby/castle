@@ -1,19 +1,16 @@
 import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import * as comps from './components';
-
 import { routing } from './app.routing';
-
-import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
-
-import { KeepActions, RoomActions, ThingActions } from './actions/actions';
-
 import { rootReducer, INITIAL_STATE, IAppState } from './reducers/root.reducer';
+import * as comps from './components';
+import * as acts from './actions/actions';
+
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
@@ -46,9 +43,9 @@ import 'hammerjs';
     comps.DeleteModalDialogComponent
   ],
   providers: [
-    KeepActions,
-    ThingActions,
-    RoomActions
+    acts.KeepActions,
+    acts.ThingActions,
+    acts.RoomActions
   ],
   entryComponents: [
     comps.KeepModalDialogComponent,
