@@ -15,6 +15,7 @@ export class ThingComponent implements OnInit {
     modalTypes = ModalTypes;
     @Input() thing: Thing;
     thingType$: Observable<ThingType>;
+    thingTypes$: Observable<ThingType[]>;
 
     constructor(
         private ngRedux: NgRedux<IAppState>,
@@ -23,6 +24,7 @@ export class ThingComponent implements OnInit {
 
     ngOnInit() {
         this.thingType$ = this.ngRedux.select<ThingType[]>('thingTypes').map(data => data.find(e => e.id === this.thing.thingTypeId));
+        // this.thingTypeActions.filterByTypeId(this.thing.thingTypeId);
     }
 
     processModalResult(event) {

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import * as types from 'model/index';
-import { KeepReducer } from './keep';
-import { RoomReducer } from './room';
-import { ThingReducer } from './thing';
-import { ThingTypeReducer } from './thingType';
+import { KeepReducer } from './keep.reduc';
+import { RoomReducer } from './room.reduc';
+import { ThingReducer } from './thing.reduc';
+import { ThingTypeReducer } from './thingType.reduc';
 
 export interface IAppState {
     keeps: types.Keep[];

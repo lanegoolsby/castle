@@ -28,6 +28,9 @@
       ],
       "lib/*": [
         "app/lib/*"
+      ],
+      "services/*":[
+        "app/services/*"
       ]
     }
   },

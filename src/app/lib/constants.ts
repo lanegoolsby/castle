@@ -22,6 +22,9 @@ export const ThingConstants = {
 export const ThingTypeConstants = {
     CREATE: 'CREATE_THING_TYPE',
     DELETE: 'DELETE_THING_TYPE',
+    LOAD: 'LOAD_THING_TYPES',
+    LOAD_SUCCESS: 'LOAD_THINGTYPE_SUCCESS',
+    FILTER: 'FILTER_THING_TYPES'
 };
 
 export const ModalTypes = {

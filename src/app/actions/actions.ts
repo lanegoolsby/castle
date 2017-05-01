@@ -1,5 +1,9 @@
 import { Thing, Room, Keep, ThingType } from '../model';
 import { KeepConstants, RoomConstants, ThingConstants, ThingTypeConstants } from '../lib/constants';
+import { Injectable } from '@angular/core';
+import { NgRedux } from '@angular-redux/store';
+import { IAppState } from '../reducers/root.reducer';
+import { ThingTypeService } from '../services';
 
 export class KeepActions {
     add(keep: Keep) {
@@ -69,7 +73,13 @@ export class ThingActions {
     }
 }
 
+@Injectable()
 export class ThingTypeActions {
+    constructor(
+        private ngRedux: NgRedux<IAppState>,
+        private thingTypeService: ThingTypeService
+    ) { }
+
     add(thingType: ThingType) {
         return {
             type: ThingTypeConstants.CREATE,
@@ -83,5 +93,21 @@ export class ThingTypeActions {
             payload: thingType
         };
     }
+
+    load() {
+        this.thingTypeService.getAllThingTypes()
+            .subscribe(thingTypes => {
+                this.ngRedux.dispatch({
+                    type: ThingTypeConstants.LOAD_SUCCESS,
+                    payload: thingTypes
+                });
+            });
+    }
+
+    filterByTypeId(typeId: number) {
+        this.ngRedux.dispatch({
+            type: ThingTypeConstants.FILTER,
+            typeId
+        });
+    }
 }
-// TODO: add the thing type actions...

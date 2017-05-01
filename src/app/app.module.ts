@@ -5,6 +5,11 @@ import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ThingTypeService } from './services';
+
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryThingTypeService } from '../api/imThingTypeService';
+
 import { routing } from './app.routing';
 import { rootReducer, INITIAL_STATE, IAppState } from './reducers/root.reducer';
 import * as comps from './components';
@@ -25,7 +30,8 @@ import 'hammerjs';
     routing,
     NgReduxModule,
     MaterialModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    InMemoryWebApiModule.forRoot(InMemoryThingTypeService, { delay: 300 }),
   ],
   declarations: [
     comps.AppComponent,
@@ -44,7 +50,9 @@ import 'hammerjs';
   providers: [
     acts.KeepActions,
     acts.ThingActions,
-    acts.RoomActions
+    acts.RoomActions,
+    acts.ThingTypeActions,
+    ThingTypeService
   ],
   entryComponents: [
     comps.KeepModalDialogComponent,

@@ -1,33 +1,8 @@
 import { ThingTypeConstants } from '../lib/constants';
 import { ThingType } from 'model/index';
 
-let InitalState: ThingType[] = [{
-    id: 1,
-    name: 'Light',
-    loading: false
-}, {
-    id: 2,
-    name: 'Temperature',
-    loading: false
-}, {
-    id: 3,
-    name: 'Window',
-    loading: false
-}, {
-    id: 4,
-    name: 'Lock',
-    loading: false
-}, {
-    id: 5,
-    name: 'PIR',
-    loading: false
-}, {
-    id: 6,
-    name: 'Hall',
-    loading: false
-}];
+let InitalState: ThingType[] = [];
 
-// TODO: This really needs to be extracted into an interface
 export function ThingTypeReducer(state = InitalState, action) {
     switch (action.type) {
         case ThingTypeConstants.CREATE:
@@ -43,6 +18,15 @@ export function ThingTypeReducer(state = InitalState, action) {
                 }
             }
             return [...state];
+        case ThingTypeConstants.LOAD:
+            console.log('Loading thing types');
+            return [];
+        case ThingTypeConstants.LOAD_SUCCESS:
+            console.log('Thing types loaded successfully');
+            return Array.from(action.payload);
+        case ThingTypeConstants.FILTER:
+            console.log('Filtering thing types by type ID');
+            return Array.from(state.filter(f => f.id === action.typeId));
         default:
             return state;
     }

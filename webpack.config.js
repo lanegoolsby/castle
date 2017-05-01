@@ -80,7 +80,8 @@ module.exports = function makeWebpackConfig() {
       reducers: srcPath('app/reducers'),
       components: srcPath('app/components'),
       model: srcPath('app/model'),
-      lib: srcPath('app/lib')
+      lib: srcPath('app/lib'),
+      services:srcPath('app/services')
     }
   };
 
