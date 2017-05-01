@@ -19,11 +19,15 @@ export const ThingConstants = {
     DELETE: 'DELETE_THING'
 };
 
+// TODO: Simply this into a generic class
 export const ThingTypeConstants = {
     CREATE: 'CREATE_THING_TYPE',
+    CREATE_SUCCESS: 'CREATE_THING_TYPE_SUCCESS',
+    CREATE_ERROR: 'CREATE_THING_TYPE_ERROR',
     DELETE: 'DELETE_THING_TYPE',
     LOAD: 'LOAD_THING_TYPES',
     LOAD_SUCCESS: 'LOAD_THINGTYPE_SUCCESS',
+    LOAD_ERROR: 'LOAD_THINGTYPE_ERROR',
     FILTER: 'FILTER_THING_TYPES'
 };
 

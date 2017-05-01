@@ -4,8 +4,7 @@ import { HttpModule } from '@angular/http';
 import { NgReduxModule, NgRedux, DevToolsExtension } from '@angular-redux/store';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { ThingTypeService } from './services';
+import { createEpicMiddleware } from 'redux-observable';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryThingTypeService } from '../api/imThingTypeService';
@@ -14,7 +13,7 @@ import { routing } from './app.routing';
 import { rootReducer, INITIAL_STATE, IAppState } from './reducers/root.reducer';
 import * as comps from './components';
 import * as acts from './actions/actions';
-
+import * as epics from './epics';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
@@ -52,7 +51,7 @@ import 'hammerjs';
     acts.ThingActions,
     acts.RoomActions,
     acts.ThingTypeActions,
-    ThingTypeService
+    epics.ThingTypeEpics
   ],
   entryComponents: [
     comps.KeepModalDialogComponent,
@@ -67,13 +66,20 @@ import 'hammerjs';
 export class AppModule {
   constructor(public appRef: ApplicationRef,
     ngRedux: NgRedux<IAppState>,
-    devTools: DevToolsExtension) {
-    const storeEnhancers = devTools.isEnabled() ? [devTools.enhancer()] : [];
-    ngRedux.configureStore(
-      rootReducer,
-      INITIAL_STATE,
-      [],
-      storeEnhancers);
+    devTools: DevToolsExtension,
+    private thingTypeEpics: epics.ThingTypeEpics) {
+      const middleWare = [
+        createEpicMiddleware(this.thingTypeEpics.load),
+        createEpicMiddleware(this.thingTypeEpics.add)
+      ];
+
+      const storeEnhancers = devTools.isEnabled() ? [devTools.enhancer()] : [];
+
+      ngRedux.configureStore(
+        rootReducer,
+        INITIAL_STATE,
+        middleWare,
+        storeEnhancers);
   }
 
   hmrOnInit(store) {

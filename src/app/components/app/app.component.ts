@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { ThingTypeActions } from 'actions';
 
 import '../../../style/app.scss';
 
@@ -12,8 +11,7 @@ import '../../../style/app.scss';
 export class AppComponent implements OnInit {
   title = 'Castle';
 
-  constructor(
-    private thingTypeActions: ThingTypeActions) {
+  constructor() {
   }
 
   toggleNav(nav: any) {
@@ -22,6 +20,5 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.thingTypeActions.load();
   }
 }

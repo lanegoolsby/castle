@@ -6,8 +6,8 @@ let InitalState: ThingType[] = [];
 export function ThingTypeReducer(state = InitalState, action) {
     switch (action.type) {
         case ThingTypeConstants.CREATE:
-            console.log('Added thing type');
             action.payload.id = Math.random();
+            console.log('Added thing type ' + action.payload.name + ' ' + action.payload.id);
             return [...state, action.payload];
         case ThingTypeConstants.DELETE:
             console.log('Removing thing type');
